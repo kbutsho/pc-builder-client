@@ -1,5 +1,4 @@
 import MainLayout from "@/layouts/main.layout";
-import dynamic from "next/dynamic";
 
 const Home = ({ data }) => {
   return (
