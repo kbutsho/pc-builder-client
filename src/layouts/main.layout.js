@@ -1,10 +1,18 @@
 import Link from 'next/link';
-import React from 'react';
 import Footer from './footer';
+import { signOut, useSession } from 'next-auth/react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MainLayout = ({ children }) => {
+    const { data: session } = useSession();
+    const logout = () => {
+        signOut();
+        toast.success('logout successfully!')
+    }
     return (
         <div>
+            <ToastContainer position="bottom-right" />
             <div className='header'>
                 <nav className="navbar navbar-expand-lg bg-primary">
                     <div className="container">
@@ -33,7 +41,12 @@ const MainLayout = ({ children }) => {
                                     </ul>
                                 </div>
                                 <Link className="btn btn-warning px-3 fw-bold pb-1 mx-3" href="/">Build PC</Link>
-                                <Link className="nav-link text-white" href="/login">Login</Link>
+                                {
+                                    session?.user ?
+                                        <button className="btn btn-danger fw-bold text-uppercase" onClick={logout}>Logout</button> :
+                                        <Link className="nav-link text-white" href="/login">Login</Link>
+                                }
+
                             </div>
                         </div>
                     </div>
