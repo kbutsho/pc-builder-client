@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Footer from './footer';
 
 const MainLayout = ({ children }) => {
     return (
@@ -42,8 +43,8 @@ const MainLayout = ({ children }) => {
                 <div className='main-area' style={{ minHeight: "85vh" }}>
                     {children}
                 </div>
-                <div className='footer text-center'>
-                    <small className='fw-bold py-4'>all rights reserved by kbutsho</small>
+                <div className='footer'>
+                    <Footer />
                 </div>
             </div>
         </div>

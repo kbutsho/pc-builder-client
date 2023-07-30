@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import HomePageProductCard from "@/components/HomeProductCard";
 import MainLayout from "@/layouts/main.layout";
 import Link from "next/link";
@@ -26,9 +27,9 @@ const Home = ({ data }) => {
   const headset = randomData.filter((item) => item.category === 'headset');
   return (
     <div>
+      <Header />
       <div className='container py-4'>
-        <h5 className="fw-bold text-uppercase text-center alert alert-primary w-100">Featured PC components</h5>
-
+        <h5 className="fw-bold text-uppercase mt-5">Featured PC components</h5>
         <div className="d-flex justify-content-end">
           <Link href="/category/cpu">
             <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>

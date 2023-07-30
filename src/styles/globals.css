@@ -11,3 +11,20 @@
     width: 200px;
     text-transform: uppercase;
 }
+.footerLink{
+    text-decoration: none;
+    color: white;
+    
+}
+
+.banner{
+    background-image: url('../images/banner.png');
+    height: 85vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.banner p {
+    text-align: justify;
+}
