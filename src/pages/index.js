@@ -1,6 +1,8 @@
 import HomePageProductCard from "@/components/HomeProductCard";
 import MainLayout from "@/layouts/main.layout";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
 const Home = ({ data }) => {
   const [randomData, setRandomData] = useState([]);
@@ -25,70 +27,124 @@ const Home = ({ data }) => {
   return (
     <div>
       <div className='container py-4'>
-        <h5 className="fw-bold text-uppercase text-center alert alert-primary w-100">Featured PC component</h5>
+        <h5 className="fw-bold text-uppercase text-center alert alert-primary w-100">Featured PC components</h5>
+
+        <div className="d-flex justify-content-end">
+          <Link href="/category/cpu">
+            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
+              <span>All CPU</span>
+              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
+            </h6>
+          </Link>
+        </div>
         {cpu.length > 0 ? (
-          <>
-            <h5 className='text-uppercase fw-bold'>CPU</h5>
-            <div className="row">
-              {cpu.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
+          <div className="row">
+            {cpu.map((data) => (
+              <HomePageProductCard data={data} key={data.id} />
+            ))}
+          </div>
+        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured cpu available!</h6>}
+
+
+        <div className="d-flex justify-content-end">
+          <Link href="/category/monitor">
+            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
+              <span>All monitor</span>
+              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
+            </h6>
+          </Link>
+        </div>
         {monitor.length > 0 ? (
-          <>
-            <h5 className='text-uppercase fw-bold'>monitor</h5>
-            <div className="row">
-              {monitor.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
+          <div className="row">
+            {monitor.map((data) => (
+              <HomePageProductCard data={data} key={data.id} />
+            ))}
+          </div>
+        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured monitor available!</h6>}
+
+
+        <div className="d-flex justify-content-end">
+          <Link href="/category/mother-board">
+            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
+              <span>All motherboard</span>
+              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
+            </h6>
+          </Link>
+        </div>
         {motherBoard.length > 0 ? (
-          <>
-            <h5 className='text-uppercase fw-bold'>mother board</h5>
-            <div className="row">
-              {motherBoard.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
-        {ram.length > 0 ? (
-          <>
-            <h5 className='text-uppercase fw-bold'>ram</h5>
-            <div className="row">
-              {ram.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
+          <div className="row">
+            {motherBoard.map((data) => (
+              <HomePageProductCard data={data} key={data.id} />
+            ))}
+          </div>
+        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured mother board available!</h6>}
+
+
+        <div className="d-flex justify-content-end">
+          <Link href="/category/power-supply">
+            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
+              <span>All power supply</span>
+              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
+            </h6>
+          </Link>
+        </div>
         {powerSupply.length > 0 ? (
-          <>
-            <h5 className='text-uppercase fw-bold'>power supply</h5>
-            <div className="row">
-              {powerSupply.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
+          <div className="row">
+            {powerSupply.map((data) => (
+              <HomePageProductCard data={data} key={data.id} />
+            ))}
+          </div>
+        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured power supply available!</h6>}
+
+
+
+        <div className="d-flex justify-content-end">
+          <Link href="/category/ram">
+            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
+              <span>All ram</span>
+              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
+            </h6>
+          </Link>
+        </div>
+        {ram.length > 0 ? (
+          <div className="row">
+            {ram.map((data) => (
+              <HomePageProductCard data={data} key={data.id} />
+            ))}
+          </div>
+        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured ram available!</h6>}
+
+
+
+        <div className="d-flex justify-content-end">
+          <Link href="/category/storage">
+            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
+              <span>All storage</span>
+              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
+            </h6>
+          </Link>
+        </div>
         {storage.length > 0 ? (
-          <>
-            <h5 className='text-uppercase fw-bold'>storage</h5>
-            <div className="row">
-              {storage.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
+          <div className="row">
+            {storage.map((data) => (
+              <HomePageProductCard data={data} key={data.id} />
+            ))}
+          </div>
+        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured storage available!</h6>}
+
+
+        <div className="d-flex justify-content-end">
+          <Link href="/category/others">
+            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
+              <span>Others</span>
+              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
+            </h6>
+          </Link>
+        </div>
+
         {gpu.length > 0 ? (
           <>
-            <h5 className='text-uppercase fw-bold'>gpu</h5>
+            <h6 className='text-uppercase fw-bold'>gpu</h6>
             <div className="row">
               {gpu.map((data) => (
                 <HomePageProductCard data={data} key={data.id} />
@@ -96,19 +152,10 @@ const Home = ({ data }) => {
             </div>
           </>
         ) : null}
-        {headset.length > 0 ? (
-          <>
-            <h5 className='text-uppercase fw-bold'>headset</h5>
-            <div className="row">
-              {headset.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
+
         {mouse.length > 0 ? (
           <>
-            <h5 className='text-uppercase fw-bold'>mouse</h5>
+            <h6 className='text-uppercase fw-bold'>mouse</h6>
             <div className="row">
               {mouse.map((data) => (
                 <HomePageProductCard data={data} key={data.id} />
@@ -116,9 +163,33 @@ const Home = ({ data }) => {
             </div>
           </>
         ) : null}
+
+
+        {headset.length > 0 ? (
+          <>
+            <h6 className='text-uppercase fw-bold'>headset</h6>
+            <div className="row">
+              {headset.map((data) => (
+                <HomePageProductCard data={data} key={data.id} />
+              ))}
+            </div>
+          </>
+        ) : null}
+
+        {mouse.length > 0 ? (
+          <>
+            <h6 className='text-uppercase fw-bold'>mouse</h6>
+            <div className="row">
+              {mouse.map((data) => (
+                <HomePageProductCard data={data} key={data.id} />
+              ))}
+            </div>
+          </>
+        ) : null}
+
         {keyboard.length > 0 ? (
           <>
-            <h5 className='text-uppercase fw-bold'>keyboard</h5>
+            <h6 className='text-uppercase fw-bold'>keyboard</h6>
             <div className="row">
               {keyboard.map((data) => (
                 <HomePageProductCard data={data} key={data.id} />

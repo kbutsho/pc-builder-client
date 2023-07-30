@@ -6,3 +6,8 @@
     padding: 20px;
     background-color: rgb(241, 248, 250);
 }
+
+.componentBtn {
+    width: 200px;
+    text-transform: uppercase;
+}
