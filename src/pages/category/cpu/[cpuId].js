@@ -8,7 +8,8 @@ const CpuDetails = ({ data }) => {
         <div className='container py-5'>
             <div className="row">
                 <div className="col-md-4">
-                    <Image src={data.image} width={300} height={300} responsive={true} />
+                    <h5 className='fw-bold text-uppercase mb-5'>cpu / processor details</h5>
+                    <Image src={data.image} width={250} height={250} responsive={true} />
                 </div>
                 <div className="col-md-8">
                     <h5>{data.name} {data.category}</h5>

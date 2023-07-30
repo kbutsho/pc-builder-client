@@ -37,7 +37,7 @@ const MainLayout = ({ children }) => {
                     </div>
                 </nav>
             </div>
-            <div style={{ background: '#F2F4F8' }}>
+            <div style={{ background: '#ffffff' }}>
                 <div className='main-area' style={{ minHeight: "85vh" }}>
                     {children}
                 </div>
