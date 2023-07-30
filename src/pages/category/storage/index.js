@@ -1,14 +1,14 @@
-import CpuCard from '@/components/CpuCard';
+import StorageCard from '@/components/StorageCard';
 import MainLayout from '@/layouts/main.layout';
 
-const CPU = ({ data }) => {
+const Storage = ({ data }) => {
     return (
         <div>
             <div className='container py-4'>
-                <h4 className='text-uppercase fw-bold'>cpu / processor</h4>
+                <h4 className='text-uppercase fw-bold'>storage</h4>
                 <div className="row">
                     {
-                        data.map((cpu) => <CpuCard cpu={cpu} key={cpu.id} />)
+                        data.map((storage) => <StorageCard storage={storage} key={storage.id} />)
                     }
                 </div>
             </div>
@@ -16,13 +16,13 @@ const CPU = ({ data }) => {
     );
 };
 
-export default CPU;
-CPU.getLayout = function getLayout(page) {
+export default Storage;
+Storage.getLayout = function getLayout(page) {
     return <MainLayout>{page}</MainLayout>;
 };
 
 export const getStaticProps = async () => {
-    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/cpu");
+    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/storage");
     const data = await res.json();
     return {
         props: {

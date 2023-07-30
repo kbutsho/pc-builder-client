@@ -22,13 +22,13 @@ const MainLayout = ({ children }) => {
                                         category
                                     </a>
                                     <ul className="dropdown-menu fw-bold text-capitalize">
-                                        <li><a className="dropdown-item" href="/category/cpu">CPU/Processor</a></li>
-                                        <li><a className="dropdown-item" href="/category/mother-board">Mother Board</a></li>
-                                        <li><a className="dropdown-item" href="/category/ram">RAM</a></li>
-                                        <li><a className="dropdown-item" href="/category/power-supply">Power Supply</a></li>
-                                        <li><a className="dropdown-item" href="/category/storage">Storage Device</a></li>
-                                        <li><a className="dropdown-item" href="/category/monitor">Monitor</a></li>
-                                        <li><a className="dropdown-item" href="/category/others">Others</a></li>
+                                        <li><Link className="dropdown-item" href="/category/cpu">CPU/Processor</Link></li>
+                                        <li><Link className="dropdown-item" href="/category/mother-board">Mother Board</Link></li>
+                                        <li><Link className="dropdown-item" href="/category/ram">RAM</Link></li>
+                                        <li><Link className="dropdown-item" href="/category/power-supply">Power Supply</Link></li>
+                                        <li><Link className="dropdown-item" href="/category/storage">Storage Device</Link></li>
+                                        <li><Link className="dropdown-item" href="/category/monitor">Monitor</Link></li>
+                                        <li><Link className="dropdown-item" href="/category/others">Others</Link></li>
                                     </ul>
                                 </div>
                                 <a className="nav-link text-white" href="/login">Login</a>

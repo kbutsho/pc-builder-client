@@ -1,6 +1,5 @@
 import RamCard from '@/components/RamCard';
 import MainLayout from '@/layouts/main.layout';
-import React from 'react';
 
 const Ram = ({ data }) => {
     return (
@@ -9,7 +8,7 @@ const Ram = ({ data }) => {
                 <h4 className='text-uppercase fw-bold'>Ram</h4>
                 <div className="row">
                     {
-                        data.map((ram) => <RamCard cpu={ram} key={ram.id} />)
+                        data.map((ram) => <RamCard ram={ram} key={ram.id} />)
                     }
                 </div>
             </div>

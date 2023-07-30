@@ -21,7 +21,7 @@ const MotherboardDetails = ({ data }) => {
                         <li>
                             <span className='fw-bold'>key features</span>
                             <ul>
-                                <li>rand: {data.keyFeatures.brand}</li>
+                                <li>brand: {data.keyFeatures.brand}</li>
                                 <li>socket: {data.keyFeatures.socket}</li>
                                 <li>model: {data.keyFeatures.model}</li>
                                 <li>chipset: {data.keyFeatures.chipset}</li>

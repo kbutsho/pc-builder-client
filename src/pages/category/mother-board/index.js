@@ -1,6 +1,5 @@
 import MotherBoardCard from '@/components/MotherBoardCard';
 import MainLayout from '@/layouts/main.layout';
-import React from 'react';
 
 const MotherBoard = ({ data }) => {
     return (

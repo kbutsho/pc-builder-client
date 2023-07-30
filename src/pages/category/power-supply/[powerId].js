@@ -22,11 +22,13 @@ const PowerSupplyDetails = ({ data }) => {
                             <span className='fw-bold'>key features</span>
                             <ul>
                                 <li>brand: {data.keyFeatures.brand}</li>
-                                <li>socket: {data.keyFeatures.socket}</li>
                                 <li>model: {data.keyFeatures.model}</li>
-                                <li>Thermal Design Power: {data.keyFeatures.tdp}</li>
-                                <li>specification: {data.keyFeatures.specification}</li>
-                                <li>clock Speed: {data.keyFeatures.clockSpeed}</li>
+                                <li>wattage: {data.keyFeatures.wattage}</li>
+                                <li>specification: {data.keyFeatures.certification}</li>
+                                <li>modular: {data.keyFeatures.modular}</li>
+                                <li>fan size: {data.keyFeatures.fanSize}</li>
+                                <li>efficiency: {data.keyFeatures.efficiency}</li>
+                                <li>connectors: {data.keyFeatures.connectors}</li>
                             </ul>
                         </li>
 

@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { AiFillStar } from 'react-icons/ai'
+import Image from "next/image";
+import Link from "next/link";
+import { AiFillStar } from "react-icons/ai";
 
-const PowerSupplyCard = (params) => {
-    const { name, image, category, status, price, averageRating, id } = params.powerSupply
+const StorageCard = (params) => {
+    const { name, image, category, status, price, averageRating, id } = params.storage
     return (
         <div className='col-lg-2 col-12'>
             <div className='card'>
@@ -15,12 +15,13 @@ const PowerSupplyCard = (params) => {
                     <li><small>{category}</small></li>
                     <li><small>price {price}</small></li>
                     <li><small>{status}</small></li>
-                    <li><small>rating {averageRating}</small><AiFillStar color="red" style={{ fontSize: "14px", margin: "0 0 2px 3px" }} /></li>
+                    <li><small>rating {averageRating}
+                    </small><AiFillStar color="red" style={{ fontSize: "14px", margin: "0 0 2px 3px" }} /></li>
                 </ul>
-                <Link href={`/category/power-supply/${id}`} className='btn btn-primary btn-sm w-100 fw-bold'>details</Link>
+                <Link href={`/category/storage/${id}`} className='btn btn-primary btn-sm w-100 fw-bold'>details</Link>
             </div>
         </div>
     );
 };
 
-export default PowerSupplyCard;
+export default StorageCard;

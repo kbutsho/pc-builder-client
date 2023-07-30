@@ -1,6 +1,5 @@
 import PowerSupplyCard from '@/components/PowerSupplyCard';
 import MainLayout from '@/layouts/main.layout';
-import React from 'react';
 
 const PowerSupply = ({ data }) => {
     return (
@@ -9,7 +8,7 @@ const PowerSupply = ({ data }) => {
                 <h4 className='text-uppercase fw-bold'>power supply</h4>
                 <div className="row">
                     {
-                        data.map((cpu) => <PowerSupplyCard cpu={cpu} key={cpu.id} />)
+                        data.map((powerSupply) => <PowerSupplyCard powerSupply={powerSupply} key={powerSupply.id} />)
                     }
                 </div>
             </div>

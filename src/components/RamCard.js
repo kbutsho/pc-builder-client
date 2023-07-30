@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { AiFillStar } from 'react-icons/ai'
 
 const RamCard = (params) => {
-    const { name, image, category, status, price, averageRating, id } = params.cpu
+    const { name, image, category, status, price, averageRating, id } = params.ram
     return (
         <div className='col-lg-2 col-12'>
             <div className='card'>
