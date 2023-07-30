@@ -9,7 +9,7 @@ const PowerSupplyDetails = ({ data }) => {
             <div className="row">
                 <div className="col-md-4">
                     <h5 className='fw-bold text-uppercase mb-5'>power supply details</h5>
-                    <Image src={data.image} width={250} height={250} responsive={true} />
+                    <Image src={data.image} width={250} height={250} alt="img" />
                 </div>
                 <div className="col-md-8">
                     <h5>{data.name} {data.category}</h5>

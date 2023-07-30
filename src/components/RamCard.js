@@ -8,7 +8,7 @@ const RamCard = (params) => {
         <div className='col-lg-2 col-12'>
             <div className='card'>
                 <div className="text-center py-2">
-                    <Image src={image} alt="img" width={120} height={120} responsive={true} />
+                    <Image src={image} alt="img" width={120} height={120} />
                 </div>
                 <h6 className='my-2'>{name}</h6>
                 <ul className='list-unstyled' style={{ fontSize: "15px" }}>

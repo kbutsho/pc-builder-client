@@ -3,13 +3,13 @@ import Image from 'next/image';
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai'
 
-const RamDetails = ({ data }) => {
+const MonitorDetails = ({ data }) => {
     return (
         <div className='container py-5'>
             <div className="row">
                 <div className="col-md-4">
-                    <h5 className='fw-bold text-uppercase mb-4'>ram details</h5>
-                    <Image src={data.image} width={300} height={300} alt="img" />
+                    <h5 className='fw-bold text-uppercase mb-5'>monitor details</h5>
+                    <Image src={data.image} width={250} height={250} alt="img"/>
                 </div>
                 <div className="col-md-8">
                     <h5>{data.name} {data.category}</h5>
@@ -22,12 +22,11 @@ const RamDetails = ({ data }) => {
                             <span className='fw-bold'>key features</span>
                             <ul>
                                 <li>brand: {data.keyFeatures.brand}</li>
+                                <li>socket: {data.keyFeatures.socket}</li>
                                 <li>model: {data.keyFeatures.model}</li>
-                                <li>capacity: {data.keyFeatures.capacity}</li>
-                                <li>specification: {data.keyFeatures.speed}</li>
-                                <li>type: {data.keyFeatures.type}</li>
-                                <li>cas latency: {data.keyFeatures.casLatency}</li>
-                                <li>voltage: {data.keyFeatures.voltage}</li>
+                                <li>Thermal Design Power: {data.keyFeatures.tdp}</li>
+                                <li>specification: {data.keyFeatures.specification}</li>
+                                <li>clock Speed: {data.keyFeatures.clockSpeed}</li>
                             </ul>
                         </li>
 
@@ -70,21 +69,21 @@ const RamDetails = ({ data }) => {
     );
 };
 
-export default RamDetails;
-RamDetails.getLayout = function getLayout(page) {
+export default MonitorDetails;
+MonitorDetails.getLayout = function getLayout(page) {
     return <MainLayout>{page}</MainLayout>;
 };
 export const getStaticPaths = async () => {
-    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/ram");
-    const rams = await res.json();
-    const paths = rams.map((ram) => ({
-        params: { ramId: ram.id }
+    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/monitor");
+    const monitor = await res.json();
+    const paths = monitor.map((monitor) => ({
+        params: { monitorId: monitor.id }
     }));
     return { paths, fallback: false }
 }
 export const getStaticProps = async (context) => {
     const { params } = context;
-    const res = await fetch(`https://kbutsho-pc-builder-server.vercel.app/ram/${params.ramId}`);
+    const res = await fetch(`https://kbutsho-pc-builder-server.vercel.app/monitor/${params.monitorId}`);
     const data = await res.json();
     return {
         props: {

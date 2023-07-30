@@ -9,7 +9,7 @@ const MotherboardDetails = ({ data }) => {
             <div className="row">
                 <div className="col-md-4">
                     <h5 className='fw-bold text-uppercase'>Mother board details</h5>
-                    <Image src={data.image} width={300} height={300} responsive={true} />
+                    <Image src={data.image} width={300} height={300} alt="img" />
                 </div>
                 <div className="col-md-8">
                     <h5>{data.name} {data.category}</h5>
