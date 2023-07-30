@@ -3,13 +3,13 @@ import Image from 'next/image';
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai'
 
-const MotherboardDetails = ({ data }) => {
+const PowerSupplyDetails = ({ data }) => {
     return (
         <div className='container py-5'>
             <div className="row">
                 <div className="col-md-4">
-                    <h5 className='fw-bold text-uppercase'>Mother board details</h5>
-                    <Image src={data.image} width={300} height={300} responsive={true} />
+                    <h5 className='fw-bold text-uppercase mb-5'>power supply details</h5>
+                    <Image src={data.image} width={250} height={250} responsive={true} />
                 </div>
                 <div className="col-md-8">
                     <h5>{data.name} {data.category}</h5>
@@ -21,24 +21,22 @@ const MotherboardDetails = ({ data }) => {
                         <li>
                             <span className='fw-bold'>key features</span>
                             <ul>
-                                <li>rand: {data.keyFeatures.brand}</li>
+                                <li>brand: {data.keyFeatures.brand}</li>
                                 <li>socket: {data.keyFeatures.socket}</li>
                                 <li>model: {data.keyFeatures.model}</li>
-                                <li>chipset: {data.keyFeatures.chipset}</li>
-                                <li>memorySlots: {data.keyFeatures.memorySlots}</li>
-                                <li>expansion slots: {data.keyFeatures.expansionSlots}</li>
-                                <li>storage: {data.keyFeatures.storage}</li>
-                                <li>ports: {data.keyFeatures.ports}</li>
-                                <li>form factor: {data.keyFeatures.formFactor}</li>
+                                <li>Thermal Design Power: {data.keyFeatures.tdp}</li>
+                                <li>specification: {data.keyFeatures.specification}</li>
+                                <li>clock Speed: {data.keyFeatures.clockSpeed}</li>
                             </ul>
                         </li>
+
                     </ul>
                     <div>
                     </div>
                 </div>
             </div>
             <div className="row mt-4">
-                <div className="col-md-4">
+                <div className="col-md-6">
                     <ul className='list-unstyled'>
                         <li>
                             <span className='fw-bold'>reviews</span>
@@ -71,21 +69,21 @@ const MotherboardDetails = ({ data }) => {
     );
 };
 
-export default MotherboardDetails;
-MotherboardDetails.getLayout = function getLayout(page) {
+export default PowerSupplyDetails;
+PowerSupplyDetails.getLayout = function getLayout(page) {
     return <MainLayout>{page}</MainLayout>;
 };
 export const getStaticPaths = async () => {
-    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/mother-board");
-    const motherboards = await res.json();
-    const paths = motherboards.map((board) => ({
-        params: { motherboardId: board.id }
+    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/power-supply");
+    const data = await res.json();
+    const paths = data.map((data) => ({
+        params: { powerId: data.id }
     }));
     return { paths, fallback: false }
 }
 export const getStaticProps = async (context) => {
     const { params } = context;
-    const res = await fetch(`https://kbutsho-pc-builder-server.vercel.app/mother-board/${params.motherboardId}`);
+    const res = await fetch(`https://kbutsho-pc-builder-server.vercel.app/power-supply/${params.powerId}`);
     const data = await res.json();
     return {
         props: {

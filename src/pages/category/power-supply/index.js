@@ -1,15 +1,15 @@
-import MotherBoardCard from '@/components/MotherBoardCard';
+import PowerSupplyCard from '@/components/PowerSupplyCard';
 import MainLayout from '@/layouts/main.layout';
 import React from 'react';
 
-const MotherBoard = ({ data }) => {
+const PowerSupply = ({ data }) => {
     return (
         <div>
             <div className='container py-4'>
-                <h4 className='text-uppercase fw-bold'>mother board</h4>
+                <h4 className='text-uppercase fw-bold'>power supply</h4>
                 <div className="row">
                     {
-                        data.map((motherboard) => <MotherBoardCard motherboard={motherboard} key={motherboard.id} />)
+                        data.map((cpu) => <PowerSupplyCard cpu={cpu} key={cpu.id} />)
                     }
                 </div>
             </div>
@@ -17,13 +17,13 @@ const MotherBoard = ({ data }) => {
     );
 };
 
-export default MotherBoard;
-MotherBoard.getLayout = function getLayout(page) {
+export default PowerSupply;
+PowerSupply.getLayout = function getLayout(page) {
     return <MainLayout>{page}</MainLayout>;
 };
 
 export const getStaticProps = async () => {
-    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/mother-board");
+    const res = await fetch("https://kbutsho-pc-builder-server.vercel.app/power-supply");
     const data = await res.json();
     return {
         props: {
