@@ -23,7 +23,7 @@ const MainLayout = ({ children }) => {
                                     </a>
                                     <ul className="dropdown-menu fw-bold text-capitalize">
                                         <li><a className="dropdown-item" href="/category/cpu">CPU/Processor</a></li>
-                                        <li><a className="dropdown-item" href="/category/motherboard">Motherboard</a></li>
+                                        <li><a className="dropdown-item" href="/category/mother-board">Mother Board</a></li>
                                         <li><a className="dropdown-item" href="/category/ram">RAM</a></li>
                                         <li><a className="dropdown-item" href="/category/power-supply">Power Supply</a></li>
                                         <li><a className="dropdown-item" href="/category/storage">Storage Device</a></li>
@@ -37,12 +37,12 @@ const MainLayout = ({ children }) => {
                     </div>
                 </nav>
             </div>
-            <div style={{ background: '#E6FFFD' }}>
+            <div style={{ background: '#F2F4F8' }}>
                 <div className='main-area' style={{ minHeight: "85vh" }}>
                     {children}
                 </div>
                 <div className='footer text-center'>
-                    <small className='fw-bold'>all rights reserved by kbutsho</small>
+                    <small className='fw-bold py-4'>all rights reserved by kbutsho</small>
                 </div>
             </div>
         </div>
