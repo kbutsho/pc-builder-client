@@ -6,7 +6,7 @@ const MonitorCard = (params) => {
     const { name, image, category, status, price, averageRating, id } = params.monitor
     return (
         <div className='col-lg-2 col-12'>
-            <div className='card'>
+            <div className='box-card'>
                 <div className="text-center py-2">
                     <Image src={image} alt="img" width={120} height={120} />
                 </div>

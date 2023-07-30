@@ -2,10 +2,10 @@ import OthersCard from '@/components/OthersCard';
 import MainLayout from '@/layouts/main.layout';
 
 const Others = ({ data }) => {
-    const gpuData = data.filter((item) => item.category === 'GPU');
-    const mouseData = data.filter((item) => item.category === 'Mouse');
-    const keyboardData = data.filter((item) => item.category === 'Keyboard');
-    const headsetData = data.filter((item) => item.category === 'Headset');
+    const gpuData = data.filter((item) => item.category === 'gpu');
+    const mouseData = data.filter((item) => item.category === 'mouse');
+    const keyboardData = data.filter((item) => item.category === 'keyboard');
+    const headsetData = data.filter((item) => item.category === 'headset');
     return (
         <div>
             <div className='container py-4'>

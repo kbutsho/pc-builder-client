@@ -13,7 +13,7 @@ const MainLayout = ({ children }) => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav ms-auto text-uppercase fw-bold">
-                                <a className="nav-link text-white" href="#">Home</a>
+                                <Link className="nav-link text-white" href="/">Home</Link>
                                 <div className="dropdown">
                                     <a className="nav-link text-white dropdown-toggle"
                                         data-bs-toggle="dropdown"
@@ -31,7 +31,8 @@ const MainLayout = ({ children }) => {
                                         <li><Link className="dropdown-item" href="/category/others">Others</Link></li>
                                     </ul>
                                 </div>
-                                <a className="nav-link text-white" href="/login">Login</a>
+                                <Link className="btn btn-warning px-3 fw-bold pb-1 mx-3" href="/">Build PC</Link>
+                                <Link className="nav-link text-white" href="/login">Login</Link>
                             </div>
                         </div>
                     </div>
