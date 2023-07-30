@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { AiFillStar } from 'react-icons/ai'
 
-const CpuCard = (params) => {
-    const { name, image, category, status, price, averageRating, id } = params.cpu
+const MonitorCard = (params) => {
+    const { name, image, category, status, price, averageRating, id } = params.monitor
     return (
         <div className='col-lg-2 col-12'>
             <div className='card'>
@@ -17,10 +17,10 @@ const CpuCard = (params) => {
                     <li><small>{status}</small></li>
                     <li><small>rating {averageRating}</small><AiFillStar color="red" style={{ fontSize: "14px", margin: "0 0 2px 3px" }} /></li>
                 </ul>
-                <Link href={`/category/cpu/${id}`} className='btn btn-primary btn-sm w-100 fw-bold'>details</Link>
+                <Link href={`/category/monitor/${id}`} className='btn btn-primary btn-sm w-100 fw-bold'>details</Link>
             </div>
         </div>
     );
 };
 
-export default CpuCard;
+export default MonitorCard;
