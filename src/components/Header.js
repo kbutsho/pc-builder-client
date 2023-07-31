@@ -11,7 +11,7 @@ const Header = () => {
                         <div className='d-flex align-items-center' style={{ height: "85vh" }}>
                             <div>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, quia! Laborum beatae quae at nulla, cumque nihil dignissimos dolorem possimus repellendus est repellat nesciunt culpa. Mollitia, optio quibusdam maiores maxime quae corrupti laudantium ducimus? Dignissimos, atque. Eum id quaerat corporis exercitationem laborum voluptate officiis, quas, totam suscipit magni, quos recusandae?</p>
-                                <Link className='btn btn-primary btn-sm px-3 fw-bold' href="/build-pc">Build your own PC!</Link>
+                                <Link className='btn btn-primary btn-sm px-3 fw-bold' href="/build">Build your own PC!</Link>
                             </div>
                         </div>
                     </div>
