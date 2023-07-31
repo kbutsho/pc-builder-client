@@ -2,6 +2,9 @@ import '@/styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import { useEffect } from 'react';
 import { SessionProvider } from "next-auth/react"
+import { Provider } from "react-redux";
+import store from '@/redux/store';
+import { ToastContainer } from 'react-toastify';
 
 export default function App({ Component, pageProps: { session, ...pageProps } }
 ) {
@@ -11,8 +14,11 @@ export default function App({ Component, pageProps: { session, ...pageProps } }
 
   const getLayout = Component.getLayout || ((page) => page);
   return (
-    <SessionProvider session={session}>
-      {getLayout(<Component {...pageProps} />)}
-    </SessionProvider>
+    <Provider store={store}>
+      <SessionProvider session={session}>
+        <ToastContainer position="bottom-right" />
+        {getLayout(<Component {...pageProps} />)}
+      </SessionProvider>
+    </Provider>
   );
 }

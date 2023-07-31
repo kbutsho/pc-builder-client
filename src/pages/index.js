@@ -70,7 +70,7 @@ const Home = ({ data }) => {
                 <Link href={c.url} className="category-link">
                   <div className="category-card">
                     <div className="text-center">
-                      <Image className="mt-2" src={c.image} height={50} width={50}></Image>
+                      <Image className="mt-2" src={c.image} height={50} width={50} alt="image"></Image>
                       <h6 className="fw-bold text-center mt-3">{c.name}</h6>
                     </div>
                   </div>
@@ -83,7 +83,7 @@ const Home = ({ data }) => {
         <div className="product-section py-5">
           <h5 className="fw-bold text-uppercase mb-4">Featured PC components</h5>
           <div className="row">
-            {randomData.map((data) => <HomePageProductCard data={data} key={data.id} />)}
+            {randomData.map((data, index) => <HomePageProductCard data={data} key={index} />)}
           </div>
         </div>
       </div>

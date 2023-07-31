@@ -36,7 +36,7 @@ const Navbar = () => {
                                     <li><Link className="dropdown-item" href="/category/others">Others</Link></li>
                                 </ul>
                             </div>
-                            <Link className="btn btn-warning px-3 fw-bold pb-1 mx-3" href="/build-pc">Build PC</Link>
+                            <Link className="btn btn-warning px-3 fw-bold pb-1 mx-3" href="/build">Build PC</Link>
                             {
                                 session?.user ?
                                     <button className="btn btn-danger fw-bold text-uppercase" onClick={logout}>Logout</button> :
