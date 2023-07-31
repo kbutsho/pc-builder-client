@@ -3,201 +3,89 @@ import HomePageProductCard from "@/components/HomeProductCard";
 import MainLayout from "@/layouts/main.layout";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaExternalLinkAlt } from 'react-icons/fa'
+import cpu from '../images/cpu.png'
+import motherboard from '../images/motherboard.png'
+import ram from '../images/ram.png'
+import storage from '../images/storage.png'
+import power from '../images/power.png'
+import monitor from '../images/monitor.png'
+//import other from '../images/other.png'
+import Image from "next/image";
 
 const Home = ({ data }) => {
   const [randomData, setRandomData] = useState([]);
-
   useEffect(() => {
     const shuffledData = data.sort(() => 0.5 - Math.random());
-    const selectedData = shuffledData.slice(0, 12);
+    const selectedData = shuffledData.slice(0, 10);
     setRandomData(selectedData);
   }, [data]);
 
-  const cpu = randomData.filter((item) => item.category === 'cpu');
-  const powerSupply = randomData.filter((item) => item.category === 'power-supply');
-  const ram = randomData.filter((item) => item.category === 'ram');
-  const storage = randomData.filter((item) => item.category === 'storage');
-  const motherBoard = randomData.filter((item) => item.category === 'mother-board');
-  const monitor = randomData.filter((item) => item.category === 'monitor');
-
-  const gpu = randomData.filter((item) => item.category === 'gpu');
-  const mouse = randomData.filter((item) => item.category === 'mouse');
-  const keyboard = randomData.filter((item) => item.category === 'keyboard');
-  const headset = randomData.filter((item) => item.category === 'headset');
+  const category = [
+    {
+      name: "CPU",
+      url: "/category/cpu",
+      image: cpu
+    },
+    {
+      name: "motherboard",
+      url: "/category/mother-board",
+      image: motherboard
+    },
+    {
+      name: "RAM",
+      url: "/category/ram",
+      image: ram
+    },
+    {
+      name: "Monitor",
+      url: "/category/monitor",
+      image: monitor
+    },
+    {
+      name: "Power Supply",
+      url: "/category/power-supply",
+      image: power
+    },
+    {
+      name: "Storage",
+      url: "/category/storage",
+      image: storage
+    }
+    // {
+    //   name: "Others",
+    //   url: "/category/others",
+    //   image: other
+    // }
+  ]
   return (
     <div>
       <Header />
       <div className='container py-4'>
-        <h5 className="fw-bold text-uppercase mt-5">Featured PC components</h5>
-        <div className="d-flex justify-content-end">
-          <Link href="/category/cpu">
-            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
-              <span>All CPU</span>
-              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
-            </h6>
-          </Link>
-        </div>
-        {cpu.length > 0 ? (
+
+        <div className="category-section py-5">
+          <h5 className="fw-bold text-uppercase mb-4">Featured Category</h5>
           <div className="row">
-            {cpu.map((data) => (
-              <HomePageProductCard data={data} key={data.id} />
+            {category.map((c, index) => (
+              <div key={index} className="col-md-2 col-sm-6 ">
+                <Link href={c.url} className="category-link">
+                  <div className="category-card">
+                    <div className="text-center">
+                      <Image className="mt-2" src={c.image} height={50} width={50}></Image>
+                      <h6 className="fw-bold text-center mt-3">{c.name}</h6>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             ))}
           </div>
-        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured cpu available!</h6>}
-
-
-        <div className="d-flex justify-content-end">
-          <Link href="/category/monitor">
-            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
-              <span>All monitor</span>
-              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
-            </h6>
-          </Link>
         </div>
-        {monitor.length > 0 ? (
+
+        <div className="product-section py-5">
+          <h5 className="fw-bold text-uppercase mb-4">Featured PC components</h5>
           <div className="row">
-            {monitor.map((data) => (
-              <HomePageProductCard data={data} key={data.id} />
-            ))}
+            {randomData.map((data) => <HomePageProductCard data={data} key={data.id} />)}
           </div>
-        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured monitor available!</h6>}
-
-
-        <div className="d-flex justify-content-end">
-          <Link href="/category/mother-board">
-            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
-              <span>All motherboard</span>
-              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
-            </h6>
-          </Link>
         </div>
-        {motherBoard.length > 0 ? (
-          <div className="row">
-            {motherBoard.map((data) => (
-              <HomePageProductCard data={data} key={data.id} />
-            ))}
-          </div>
-        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured mother board available!</h6>}
-
-
-        <div className="d-flex justify-content-end">
-          <Link href="/category/power-supply">
-            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
-              <span>All power supply</span>
-              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
-            </h6>
-          </Link>
-        </div>
-        {powerSupply.length > 0 ? (
-          <div className="row">
-            {powerSupply.map((data) => (
-              <HomePageProductCard data={data} key={data.id} />
-            ))}
-          </div>
-        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured power supply available!</h6>}
-
-
-
-        <div className="d-flex justify-content-end">
-          <Link href="/category/ram">
-            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
-              <span>All ram</span>
-              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
-            </h6>
-          </Link>
-        </div>
-        {ram.length > 0 ? (
-          <div className="row">
-            {ram.map((data) => (
-              <HomePageProductCard data={data} key={data.id} />
-            ))}
-          </div>
-        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured ram available!</h6>}
-
-
-
-        <div className="d-flex justify-content-end">
-          <Link href="/category/storage">
-            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
-              <span>All storage</span>
-              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
-            </h6>
-          </Link>
-        </div>
-        {storage.length > 0 ? (
-          <div className="row">
-            {storage.map((data) => (
-              <HomePageProductCard data={data} key={data.id} />
-            ))}
-          </div>
-        ) : <h6 className="text-center fw-bold text-danger alert alert-danger my-5">no featured storage available!</h6>}
-
-
-        <div className="d-flex justify-content-end">
-          <Link href="/category/others">
-            <h6 className='btn btn-secondary btn-sm componentBtn fw-bold'>
-              <span>Others</span>
-              <FaExternalLinkAlt className="ms-2" style={{ marginBottom: "5px" }} />
-            </h6>
-          </Link>
-        </div>
-
-        {gpu.length > 0 ? (
-          <>
-            <h6 className='text-uppercase fw-bold'>gpu</h6>
-            <div className="row">
-              {gpu.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
-
-        {mouse.length > 0 ? (
-          <>
-            <h6 className='text-uppercase fw-bold'>mouse</h6>
-            <div className="row">
-              {mouse.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
-
-
-        {headset.length > 0 ? (
-          <>
-            <h6 className='text-uppercase fw-bold'>headset</h6>
-            <div className="row">
-              {headset.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
-
-        {mouse.length > 0 ? (
-          <>
-            <h6 className='text-uppercase fw-bold'>mouse</h6>
-            <div className="row">
-              {mouse.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
-
-        {keyboard.length > 0 ? (
-          <>
-            <h6 className='text-uppercase fw-bold'>keyboard</h6>
-            <div className="row">
-              {keyboard.map((data) => (
-                <HomePageProductCard data={data} key={data.id} />
-              ))}
-            </div>
-          </>
-        ) : null}
       </div>
     </div>
   );

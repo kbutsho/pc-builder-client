@@ -5,19 +5,25 @@
     margin: 20px 0;
     padding: 20px;
     background-color: rgb(241, 248, 250);
+    transition: 0.3s;
+}
+
+.box-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 1px 3px 3px 3px;
 }
 
 .componentBtn {
     width: 200px;
     text-transform: uppercase;
 }
-.footerLink{
+
+.footerLink {
     text-decoration: none;
     color: white;
 
 }
 
-.banner{
+.banner {
     background-image: url('../images/banner.png');
     height: 85vh;
     width: 100%;
@@ -25,6 +31,7 @@
     background-size: cover;
     background-position: center;
 }
+
 .banner p {
     text-align: justify;
 }
@@ -38,4 +45,28 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 1px 2px;
+}
+
+.main-area {
+    min-height: 85vh;
+}
+
+.category-link {
+    text-decoration: none;
+    color: black;
+}
+
+.category-card {
+    height: 120px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 1px 3px 3px 3px;
 }
