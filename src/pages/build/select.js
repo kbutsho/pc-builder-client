@@ -35,7 +35,7 @@ const SelectComponent = ({ data }) => {
                                         <li><span className='fw-bold'>Rating</span> {item.averageRating}</li>
                                     </ul>
                                 </div>
-                                <div className='col-md-7'>
+                                <div className='col-md-6'>
                                     <h6 className='fw-bold text-danger'>Key Features</h6>
                                     <ul>
 
@@ -64,8 +64,8 @@ const SelectComponent = ({ data }) => {
                                         {item.keyFeatures.type ? <li>Type: {item.keyFeatures.type}</li> : null}
                                     </ul>
                                 </div>
-                                <div className="col-md-1 d-flex align-items-end">
-                                    <button onClick={() => handleSelectComponent({ data: item })} className='btn btn-primary px-3 fw-bold'>select</button>
+                                <div className="col-md-2 d-flex align-items-end justify-content-end">
+                                    <button onClick={() => handleSelectComponent({ data: item })} className='btn btn-primary px-3 fw-bold'>Add to build</button>
                                 </div>
                             </div>
                         </div>

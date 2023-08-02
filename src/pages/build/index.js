@@ -43,7 +43,7 @@ const PCBuild = () => {
                         <h4 className='fw-bold text-uppercase'>Total price {totalPrice}$</h4>
                         <div className='d-flex justify-content-end'>
                             {
-                                components.length === 6 ?
+                                components.length >= 5 ?
                                     <button className='btn btn-primary fw-bold' onClick={() => buildCompleteHandel()}>complete build</button> :
                                     <button disabled className='btn btn-primary fw-bold' onClick={() => buildCompleteHandel()}>complete build</button>
                             }
@@ -59,7 +59,7 @@ const PCBuild = () => {
                             <h6 className='fw-bold text-uppercase mt-3'>Processor</h6>
                         </div>
                         <div className='col-md-2'>
-                            {cpuData ? <Image src={cpuData.data.image} width={130} height={130} alt="img" /> : null}
+                            {cpuData ? <Image priority={true} src={cpuData.data.image} width={130} height={130} alt="img" /> : null}
                         </div>
                         <div className='col-md-7'>
                             {cpuData ? (
@@ -89,7 +89,7 @@ const PCBuild = () => {
                             <h6 className='fw-bold text-uppercase mt-3'>Motherboard</h6>
                         </div>
                         <div className='col-md-2'>
-                            {motherboardData ? <Image src={motherboardData.data.image} width={130} height={130} alt="img" /> : null}
+                            {motherboardData ? <Image priority={true} src={motherboardData.data.image} width={130} height={130} alt="img" /> : null}
                         </div>
                         <div className='col-md-7'>
                             {motherboardData ? (
@@ -119,7 +119,7 @@ const PCBuild = () => {
                             <h6 className='fw-bold text-uppercase mt-3'>Ram</h6>
                         </div>
                         <div className='col-md-2'>
-                            {ramData ? <Image src={ramData.data.image} width={130} height={130} alt="img" /> : null}
+                            {ramData ? <Image priority={true} src={ramData.data.image} width={130} height={130} alt="img" /> : null}
                         </div>
                         <div className='col-md-7'>
                             {ramData ? (
@@ -149,7 +149,7 @@ const PCBuild = () => {
                             <h6 className='fw-bold text-uppercase mt-3'>monitor</h6>
                         </div>
                         <div className='col-md-2'>
-                            {monitorData ? <Image src={monitorData.data.image} width={130} height={130} alt="img" /> : null}
+                            {monitorData ? <Image priority={true} src={monitorData.data.image} width={130} height={130} alt="img" /> : null}
                         </div>
                         <div className='col-md-7'>
                             {monitorData ? (
@@ -179,7 +179,7 @@ const PCBuild = () => {
                             <h6 className='fw-bold text-uppercase mt-3'>power supply</h6>
                         </div>
                         <div className='col-md-2'>
-                            {powerData ? <Image src={powerData.data.image} width={130} height={130} alt="img" /> : null}
+                            {powerData ? <Image priority={true} src={powerData.data.image} width={130} height={130} alt="img" /> : null}
                         </div>
                         <div className='col-md-7'>
                             {powerData ? (
@@ -209,7 +209,7 @@ const PCBuild = () => {
                             <h6 className='fw-bold text-uppercase mt-3'>storage</h6>
                         </div>
                         <div className='col-md-2'>
-                            {storageData ? <Image src={storageData.data.image} width={130} height={130} alt="img" /> : null}
+                            {storageData ? <Image priority={true} src={storageData.data.image} width={130} height={130} alt="img" /> : null}
                         </div>
                         <div className='col-md-7'>
                             {storageData ? (

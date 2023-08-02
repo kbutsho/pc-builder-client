@@ -9,7 +9,6 @@ import ram from '../images/ram.png'
 import storage from '../images/storage.png'
 import power from '../images/power.png'
 import monitor from '../images/monitor.png'
-//import other from '../images/other.png'
 import Image from "next/image";
 
 const Home = ({ data }) => {
@@ -51,11 +50,6 @@ const Home = ({ data }) => {
       url: "/category/storage",
       image: storage
     }
-    // {
-    //   name: "Others",
-    //   url: "/category/others",
-    //   image: other
-    // }
   ]
   return (
     <div>
@@ -97,7 +91,7 @@ Home.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const response1 = await fetch("https://kbutsho-pc-builder-server.vercel.app/cpu");
   const response2 = await fetch("https://kbutsho-pc-builder-server.vercel.app/mother-board");
   const response3 = await fetch("https://kbutsho-pc-builder-server.vercel.app/ram");
@@ -117,6 +111,7 @@ export const getServerSideProps = async () => {
   return {
     props: {
       data: allData
-    }
+    },
+    revalidate: 30
   };
 };
